@@ -58,17 +58,16 @@ storage, and nothing leaves the watch.</p>
 editor.</p>
 
 <h2>Permissions</h2>
-<p>The package declares the following permissions, which allow the system to supply
-complication data to the face:</p>
+<p>The package declares one permission:</p>
 <table>
   <tr><th>Permission</th><th>Purpose</th></tr>
   <tr><td><code>RECEIVE_COMPLICATION_DATA</code></td><td>Allows the system to deliver complication values for display</td></tr>
-  <tr><td><code>BODY_SENSORS</code></td><td>Allows heart-rate complications to be shown</td></tr>
-  <tr><td><code>BODY_SENSORS_BACKGROUND</code></td><td>Allows a heart-rate complication to update while the display is dimmed</td></tr>
-  <tr><td><code>ACTIVITY_RECOGNITION</code></td><td>Allows step-count and activity complications to be shown</td></tr>
 </table>
-<p>These permissions govern what the system may pass to the face for rendering. The face has
-no code able to read a sensor directly.</p>
+<p>No sensor permissions are requested. The face does not hold <code>BODY_SENSORS</code>,
+<code>BODY_SENSORS_BACKGROUND</code> or <code>ACTIVITY_RECOGNITION</code>, and cannot read a
+sensor of any kind. Heart rate, step count and similar readings are measured by their own
+provider apps, which hand a finished value to the system; the face receives only that value,
+to draw it.</p>
 
 <h2>Children</h2>
 <p>This app is not directed at children and contains nothing directed at children.</p>
