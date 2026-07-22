@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Whale Shark Watch Face</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 4rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    background: #fff;
+  }
+  h1 { font-size: 1.65rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.15rem; margin-top: 2.25rem; }
+  .meta { color: #666; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid #e3e3e3; vertical-align: top; }
+  th { font-weight: 600; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e6e6e6; background: #101214; }
+    .meta { color: #9aa0a6; }
+    th, td { border-bottom-color: #2a2e33; }
+    a { color: #7cb7ff; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — Whale Shark Watch Face</h1>
+<p class="meta">Effective 21 July 2026 · Contact: <a href="mailto:me@bukowskaii.com">me@bukowskaii.com</a></p>
+
+<h2>Summary</h2>
+<p>Whale Shark Watch Face does not collect, store, transmit or share any personal data.
+It contains no application code, no network access and no analytics.</p>
+
+<h2>Why this policy is short</h2>
+<p>A Watch Face Format face is a resource-only package. It is a set of images and an XML
+description of how to draw them; the manifest declares <code>android:hasCode="false"</code>,
+and the published bundle contains no executable code at all. The watch's own system
+software reads that description and renders the dial.</p>
+<p>There is therefore no component of this app that is capable of collecting information,
+opening a network connection, or sending anything anywhere.</p>
+
+<h2>Complications</h2>
+<p>The face can display complications — the small readings in the dial's slots, such as
+heart rate, step count, date or weather.</p>
+<p>That data is produced by other applications on the watch and supplied to the watch face
+system by the operating system, at your request, when you choose a provider for a slot.
+The face describes where on the dial to draw the value. It does not receive that data into
+any code of its own, and does not retain, copy or transmit it. Nothing is written to
+storage, and nothing leaves the watch.</p>
+<p>To stop a reading being displayed, set that complication slot to empty in the watch face
+editor.</p>
+
+<h2>Permissions</h2>
+<p>The package declares the following permissions, which allow the system to supply
+complication data to the face:</p>
+<table>
+  <tr><th>Permission</th><th>Purpose</th></tr>
+  <tr><td><code>RECEIVE_COMPLICATION_DATA</code></td><td>Allows the system to deliver complication values for display</td></tr>
+  <tr><td><code>BODY_SENSORS</code></td><td>Allows heart-rate complications to be shown</td></tr>
+  <tr><td><code>BODY_SENSORS_BACKGROUND</code></td><td>Allows a heart-rate complication to update while the display is dimmed</td></tr>
+  <tr><td><code>ACTIVITY_RECOGNITION</code></td><td>Allows step-count and activity complications to be shown</td></tr>
+</table>
+<p>These permissions govern what the system may pass to the face for rendering. The face has
+no code able to read a sensor directly.</p>
+
+<h2>Children</h2>
+<p>This app is not directed at children and contains nothing directed at children.</p>
+
+<h2>Changes</h2>
+<p>Any change to this policy will be published at this address, with the effective date
+updated.</p>
+
+</body>
+</html>
