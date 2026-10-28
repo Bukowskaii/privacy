@@ -36,8 +36,8 @@
 <h2>Summary</h2>
 <p>The Plane: Endless Idle TD ("the game") collects no personal data of its own. It has no
 accounts, no analytics and no servers. Your progress is saved on your device. The only
-data that leaves your device goes to Google, through Google Play, when you sign in to Play Games
-or make a purchase.</p>
+data that leaves your device goes to Google: through Google Play when you sign in to Play Games
+or make a purchase, and through Google AdMob for the optional rewarded videos.</p>
 
 <h2>Google Play Games (optional)</h2>
 <p>If you sign in to Google Play Games, the game uses Play Games Services to back up your save
@@ -55,9 +55,19 @@ purchase is never granted twice and can be restored. It never sees your payment 
 
 <h2>Rewarded videos</h2>
 <p>The game offers optional rewarded videos: one plays only when you tap to watch it for a
-boost, and nothing else in the game shows ads. No ad network is built in yet, so no advertising
-data is collected. Before one is added, this section will be updated to name the provider and
-describe what it collects.</p>
+boost, and nothing else in the game shows ads. The videos come from Google AdMob. To serve them
+and to prevent fraud, Google's Mobile Ads SDK collects your device's IP address (which can
+estimate your general location), your interactions with the ads (such as app launches, taps and
+video views), diagnostic information about the app and the SDK, and device identifiers such as
+the Android advertising ID and app set ID. Google uses this for advertising, analytics and fraud
+prevention, as described in
+<a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use our services</a>
+and at
+<a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">developers.google.com/admob/android/privacy/play-data-disclosure</a>.</p>
+<p>In the European Economic Area, the UK and Switzerland, the game asks for your consent through
+Google's consent form before personalized ads are shown. You can reset or limit the advertising
+ID in your device's settings (Settings &gt; Privacy &gt; Ads, or Google &gt; Ads). A Supporter Pack
+skips the videos, so no ad is requested at all.</p>
 
 <h2>Problem reports and save export</h2>
 <p>Settings has a <b>Report a problem</b> button. It copies a text report (game version, device
@@ -68,7 +78,11 @@ the text goes only where you choose to paste it.</p>
 <h2>Permissions</h2>
 <table>
   <tr><th>Permission</th><th>Purpose</th></tr>
-  <tr><td><code>INTERNET</code></td><td>Play Games sign-in, cloud save and achievements</td></tr>
+  <tr><td><code>INTERNET</code></td><td>Play Games sign-in, cloud save, achievements and rewarded videos</td></tr>
+  <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Lets the ad SDK check for a connection before loading a video</td></tr>
+  <tr><td><code>AD_ID</code></td><td>Lets the ad SDK read the advertising ID (added by Google's Mobile Ads SDK)</td></tr>
+  <tr><td><code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code></td><td>Android's Privacy Sandbox ad services, which the ad SDK may use in place of the advertising ID (added by Google's Mobile Ads SDK; you can turn them off in Android's privacy settings)</td></tr>
+  <tr><td><code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code></td><td>Added by Google Play services libraries for background work they schedule; the game itself does not run in the background</td></tr>
   <tr><td><code>com.android.vending.BILLING</code></td><td>Purchases through Google Play</td></tr>
 </table>
 <p>The game does not request your location, contacts, camera, microphone, storage or any
