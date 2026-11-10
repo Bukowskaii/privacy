@@ -33,10 +33,21 @@
 <p class="meta">Bukowskaii Creations LLC · Effective 10 November 2026 · Contact: <a href="mailto:tom@bukowskaii.com">tom@bukowskaii.com</a></p>
 
 <h2>Summary</h2>
-<p>The Lightwell: Endless Idle TD ("the game") collects no personal data of its own. It has no accounts and no servers of its own. Your progress is saved on your device. The only data that leaves your device goes to Google: through Google Play when you sign in to Play Games or make a purchase, through Google AdMob for the optional rewarded videos, and through Firebase Crashlytics for anonymous crash and error reports, which you can turn off in Settings.</p>
+<p>The Lightwell: Endless Idle TD ("the game") has no accounts of its own, and your progress is saved on your device. Most data that leaves your device goes to Google: through Google Play when you sign in to Play Games or make a purchase, through Google AdMob for the optional rewarded videos, and through Firebase Crashlytics for anonymous crash and error reports, which you can turn off in Settings. If you are signed in to Play Games, your Weekly runs also go to our own server, the Lightwell service at lightwell.bukowskaii.com, which replays them to build the Weekly ranking (see Weekly ranking). You can remove yourself from it in Settings.</p>
 
 <h2>Google Play Games (optional)</h2>
-<p>If you sign in to Google Play Games, the game uses Play Games Services to back up your save to your Google account, to record your achievements and to post your best wave to the leaderboard. Google handles that data under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>, and describes what the Play Games SDK collects at <a href="https://developer.android.com/games/pgs/data-collection">developer.android.com/games/pgs/data-collection</a>. You can play without signing in, and you can delete your Play Games data at any time (see Deleting your data).</p>
+<p>If you sign in to Google Play Games, the game uses Play Games Services to back up your save to your Google account, and to record your achievements. Google handles that data under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>, and describes what the Play Games SDK collects at <a href="https://developer.android.com/games/pgs/data-collection">developer.android.com/games/pgs/data-collection</a>. You can play without signing in, and you can delete your Play Games data at any time (see Deleting your data).</p>
+
+<h2 id="weekly-ranking">Weekly ranking</h2>
+<p>The Weekly ranking is our own board, run by Bukowskaii Creations LLC on the Lightwell service (lightwell.bukowskaii.com). It is not a Google Play Games leaderboard. The game sends the following only when you are signed in to Play Games, and only for the Weekly:</p>
+<ul>
+  <li><strong>Your Play Games player id and display name.</strong> The game asks Play Games for a one-time sign-in code, and our server exchanges it with Google for your player id for this game and your Play Games display name. The ranking shows your Play Games name, or "Anonymous #" and a number if you choose Anonymous in Settings &gt; Weekly ranking &gt; Ranking name. There are no free-text names.</li>
+  <li><strong>Your Weekly runs.</strong> For each run: the week, a random run id, the game version, the game rules version, the list of moves you made (which tower, where and when), and the best wave and run length the game claims. The server replays the moves to check the wave before it ranks it. It never receives your save, your Lumens, your purchases, your advertising ID or your location.</li>
+  <li><strong>A Play Integrity verdict.</strong> Each upload carries a Google Play Integrity token, which our server sends to Google to learn whether the request came from the genuine game on a genuine device. The server keeps only the verdict labels Google returns (such as "recognized by Play" and "meets device integrity"), never device identifiers. A run that fails the check is kept off the public board.</li>
+  <li><strong>Your IP address,</strong> which the server uses in memory to limit how often a device can call it. It is not stored. The game also asks the server for the current time, so the Weekly is timed fairly. That request sends nothing but your IP address, and it is not logged.</li>
+</ul>
+<p>How long we keep it: the move lists of runs for 8 weeks; the board rows (rank, name and wave for each week) as the ranking's history; your player record (player id and name choice) until you remove yourself. Data travels over HTTPS, is stored only on our server, and is not sold or shared.</p>
+<p>To remove yourself, open Settings &gt; Weekly ranking &gt; <strong>Remove me</strong>. This deletes your player record, your name and all your runs and board rows from the server at once, and the game stops sending new runs until you choose Join the ranking again. You can also email <a href="mailto:tom@bukowskaii.com">tom@bukowskaii.com</a>. If you never sign in to Play Games, the only thing the game sends to the Lightwell service is the time request.</p>
 
 <h2>Purchases</h2>
 <p>Purchases go through Google Play Billing. The game receives only the purchase record Google sends (which product, and its order and purchase tokens) and keeps it on your device so that a purchase is never granted twice and can be restored. It never sees your payment details.</p>
@@ -54,7 +65,7 @@
 <h2>Permissions</h2>
 <table>
   <tr><th>Permission</th><th>Purpose</th></tr>
-  <tr><td><code>INTERNET</code></td><td>Play Games sign-in, cloud save, achievements, rewarded videos and error reports</td></tr>
+  <tr><td><code>INTERNET</code></td><td>Play Games sign-in, cloud save, achievements, the Weekly ranking, rewarded videos and error reports</td></tr>
   <tr><td><code>ACCESS_NETWORK_STATE</code></td><td>Lets the ad and error-reporting SDKs check for a connection before sending</td></tr>
   <tr><td><code>AD_ID</code></td><td>Lets the ad SDK read the advertising ID (added by Google's Mobile Ads SDK)</td></tr>
   <tr><td><code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code></td><td>Android's Privacy Sandbox ad services, which the ad SDK may use in place of the advertising ID (added by Google's Mobile Ads SDK; you can turn them off in Android's privacy settings)</td></tr>
@@ -69,7 +80,8 @@
 <p>The game has no accounts of its own, so there is nothing to close. You can delete everything it keeps:</p>
 <ul>
   <li><strong>Your save and purchase records on the device:</strong> uninstall the game, or clear its storage (Android Settings &gt; Apps &gt; The Lightwell &gt; Storage &gt; Clear storage).</li>
-  <li><strong>Your Play Games cloud save, achievements and leaderboard scores:</strong> delete the game's data in the Play Games app (Profile &gt; Settings &gt; Delete Play Games account and data, or remove just this game), or manage it in your Google account at <a href="https://myaccount.google.com">myaccount.google.com</a>.</li>
+  <li><strong>Your Weekly ranking entries on our server:</strong> Settings &gt; Weekly ranking &gt; Remove me deletes them at once, or email <a href="mailto:tom@bukowskaii.com">tom@bukowskaii.com</a>.</li>
+  <li><strong>Your Play Games cloud save, achievements and any old leaderboard scores:</strong> delete the game's data in the Play Games app (Profile &gt; Settings &gt; Delete Play Games account and data, or remove just this game), or manage it in your Google account at <a href="https://myaccount.google.com">myaccount.google.com</a>.</li>
   <li><strong>Advertising data:</strong> reset or delete the advertising ID in your device's settings (Settings &gt; Privacy &gt; Ads, or Google &gt; Ads). Google keeps AdMob data under its own retention rules in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
   <li><strong>Anything else:</strong> email <a href="mailto:tom@bukowskaii.com">tom@bukowskaii.com</a> and we will delete anything you sent us (such as a pasted problem report) within 30 days.</li>
 </ul>
